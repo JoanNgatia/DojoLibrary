@@ -10,7 +10,7 @@ class Book(models.Model):
     author = models.CharField(max_length=255)
     quantity = models.IntegerField()
     description = models.URLField(max_length=400)
-    category = models.ForeignKey('Category')
+    category = models.ForeignKey('Category', null=True, on_delete=models.SET_NULL)
 
 
 class Category(models.Model):
